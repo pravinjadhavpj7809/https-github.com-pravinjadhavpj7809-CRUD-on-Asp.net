@@ -1,0 +1,37 @@
+﻿@model EntityCrud.Models.Employee
+
+@{
+    ViewBag.Title = "DeleteEmployee";
+}
+
+<h2>DeleteEmployee</h2>
+
+@using (Html.BeginForm("DeleteEmployee", "Employee"))
+{
+    <table border="1">
+        <tr>
+            <td>Eid</td>
+            <td>@Html.TextBoxFor(E => E.Eid, new { @readonly = true })</td>
+        </tr>
+        <tr>
+            <td>Ename</td>
+            <td>@Html.TextBoxFor(E => E.Ename, new { @readonly = true })</td>
+        </tr>
+        <tr>
+            <td>Job</td>
+            <td>@Html.TextBoxFor(E => E.job, new { @readonly = true })</td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td>@Html.TextBoxFor(E => E.salary, new { @readonly = true })</td>
+        </tr>
+        <tr>
+            <td>Did</td>
+            <td>@Html.TextBoxFor(E => E.Did, new { @readonly = true })</td>
+        </tr>
+        <font color="Red">Are You Sure You Want To Delete</font>
+        <input type="submit" value="Save" />
+    </table>
+    <font color="Red">Are You Sure You Want To Delete</font>
+    <input type="submit" value="Save" />
+}

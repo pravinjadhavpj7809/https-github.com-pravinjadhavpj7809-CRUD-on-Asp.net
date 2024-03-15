@@ -1,0 +1,48 @@
+﻿@model IEnumerable<EntityCrud.Models.Employee>
+
+@{
+    ViewBag.Title = "DisplayEmployees";
+}
+
+<h2 style="text-align:center">DisplayEmployees</h2>
+
+<table border="1" align="center">
+
+    <tr>
+        <th>@Html.DisplayNameFor(E => E.Eid)</th>
+        <th>@Html.DisplayNameFor(E => E.Ename)</th>
+        <th>@Html.DisplayNameFor(E => E.job)</th>
+        <th>@Html.DisplayNameFor(E => E.salary)</th>
+        <th>@Html.DisplayNameFor(E => E.Status)</th>
+        <th>@Html.DisplayNameFor(E => E.Did)</th>
+        <th>@Html.DisplayNameFor(E => E.Department.Dname)</th>
+        <th>@Html.DisplayNameFor(E => E.Department.Location)</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var Employee in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(E => Employee.Eid)</td>
+            <td>@Html.DisplayFor(E => Employee.Ename)</td>
+            <td>@Html.DisplayFor(E => Employee.job)</td>
+            <td>@Html.DisplayFor(E => Employee.salary)</td>
+            <th>@Html.DisplayFor(E => Employee.Status)</th>
+            <td>@Html.DisplayFor(E => Employee.Did)</td>
+            <td>@Html.DisplayFor(E => Employee.Department.Did)</td>
+            <td>@Html.DisplayFor(E => Employee.Department.Location)</td>
+            <td>
+                @Html.ActionLink("View", "DisplayEmployee", new { Eid = Employee.Eid })
+                @Html.ActionLink("Edit", "EditEmployee", new { Eid = Employee.Eid })
+                @Html.ActionLink("Delete", "DeleteEmployee", new { Eid = Employee.Eid })
+            </td>
+
+        </tr>
+
+    }
+    <tr>
+        <td colspan="9">@Html.ActionLink("Add new Employee", "AddEmployee")</td>
+    </tr>
+</table>
+
+

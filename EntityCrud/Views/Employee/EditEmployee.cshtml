@@ -1,0 +1,36 @@
+﻿@model EntityCrud.Models.Employee
+
+@{
+    ViewBag.Title = "EditEmployee";
+}
+
+<h2>EditEmployee</h2>
+
+@using (Html.BeginForm("UpdateEmployee","Employee"))
+{
+    <div>
+        @Html.HiddenFor(E=>E.Eid)
+    </div>
+    <div>
+        @Html.LabelFor(E => E.Ename)<br />
+        @Html.TextBoxFor(E => E.Ename)
+
+    </div>
+    <div>
+        @Html.LabelFor(E => E.job)<br />
+        @Html.TextBoxFor(E => E.job)
+
+    </div>
+    <div>
+        @Html.LabelFor(E => E.salary)<br />
+        @Html.TextBoxFor(E => E.salary)
+
+    </div>
+    <div>
+        <label>Department</label>
+        @Html.DropDownList("Did");
+    </div>
+    <input type="submit" value="Update" />
+
+}
+

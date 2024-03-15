@@ -1,0 +1,31 @@
+﻿@model EntityCrud.Models.Employee
+
+@{
+    ViewBag.Title = "AddEmployee";
+}
+
+<h2>AddEmployee</h2>
+
+@using (Html.BeginForm("AddEmployee", "Employee"))
+{
+    <div>
+        @Html.LabelFor(E => E.Ename)<br />
+        @Html.TextBoxFor(E => E.Ename)
+    </div>
+    <div>
+        @Html.LabelFor(E => E.job)<br />
+        @Html.TextBoxFor(E => E.job)
+    </div>
+    <div>
+        @Html.LabelFor(E => E.salary)<br />
+        @Html.TextBoxFor(E => E.salary)
+    </div>
+    <div>
+    <label>Department</label>
+        @Html.DropDownList("Did", "-Select Department-");
+    </div>
+    <div>
+        <input type="submit" value="save" /> 
+    </div>
+}
+

@@ -1,0 +1,19 @@
+﻿@model EntityCrud.Models.Employee
+
+@{
+    ViewBag.Title = "DisplayEmployee";
+}
+
+<h2 style="text-align:center">DisplayEmployee</h2>
+
+<table border="1" align="center">
+    <tr><td>Employee ID</td><td>@Model.Eid</td></tr>
+    <tr><td>Employee Name</td><td>@Model.Ename</td></tr>
+    <tr><td>Employee job</td><td>@Model.job</td></tr>
+    <tr><td>Employee salary</td><td>@Model.salary</td></tr>
+    <tr><td>Employee status</td><td>@Model.Status</td></tr>
+    <tr><td>Department ID</td><td>@Model.Did</td></tr>
+    <tr><td>Department Name</td><td>@Model.Department.Dname</td></tr>
+    <tr><td>Department Location</td><td>@Model.Department.Location</td></tr>
+</table>
+
